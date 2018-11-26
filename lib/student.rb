@@ -15,8 +15,8 @@ class Student
     DB[:conn].execute("CREATE TABLE IF NOT EXISTS students(id INTEGER PRIMARY KEY,name TEXT,grade INTEGER)")
   end
 
-  def self.drop_table 
-    DB[:conn].execute("DROP TABLE students IF EXISTS ")
+  def self.drop_table
+    DB[:conn].execute("DROP TABLE IF EXISTS students")
   end
 
 end

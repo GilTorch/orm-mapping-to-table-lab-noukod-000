@@ -1,3 +1,5 @@
+require 'pry'
+
 class Student
 
   # Remember, you can access your database connection anywhere in this class
@@ -22,6 +24,7 @@ class Student
   def save
     sql="INSERT INTO students(name,grade) VALUES(?,?)"
     result=DB[:conn].execute(sql,self.name,self.grade)
+    binding.pry
   end
 
 end

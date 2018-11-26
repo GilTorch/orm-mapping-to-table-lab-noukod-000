@@ -24,7 +24,7 @@ class Student
   def save
     sql="INSERT INTO students(name,grade) VALUES(?,?)"
     DB[:conn].execute(sql,self.name,self.grade)
-    self.id=DB[:conn].execute("SELECT last_insert_rowid()")[0][0]
+    @id=DB[:conn].execute("SELECT last_insert_rowid()")[0][0]
   end
 
 end
